@@ -1,0 +1,9 @@
+{
+  "record": 26,
+  "source_record": 25,
+  "source_wall_sha256": "fc1ff282e8e29d7102002b0496f76b58bc0ba94515ebc4565dbaf2820ac4e069",
+  "wall_png": {"path": "artifacts/line-2/wall-v6.png", "format": "PNG", "dimensions": [1254, 1254], "color": "8-bit RGB, non-interlaced", "bytes": 3948377, "sha256": "0ff0a6cdd0f6b5c371392f36f2ff003b82131f900e748b2fdc5824108fe62330"},
+  "thumbnail_jpeg": {"path": "dist/line-2/26.jpg", "format": "baseline JPEG, 3 components", "dimensions": [512, 512], "bytes": 55793, "sha256": "edcad14a999201e56ef31b8a30de762879929945738c9252ed6cd9f28857586f"},
+  "new_mark": {"description": "Twin charcoal tracks meet a closed ring around a red-ochre dot, marking an exact offline draft check.", "placement_rectangle": [900, 795, 190, 145], "changed_pixel_bbox": [900, 795, 1090, 940], "changed_pixels": 10520, "pixels_outside_placement_changed": 0},
+  "visual_review": {"pepe_wide_mouth": true, "pepe_heavy_lidded_eyes": true, "inherited_pepe_digits_per_hand": 5, "new_hands_or_handprints": false, "letters_or_numbers_observed": false, "rock_and_framing_preserved": true, "unmet_visual_requirements": []}
+}
