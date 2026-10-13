@@ -218,7 +218,7 @@ def compare(observation, endpoint, cases):
     end = rpc.call('eth_getBlockByNumber', [observation['base']['block']['number'], False])
     z.require(end and end['hash'] == pin['blockHash'], 'block changed during comparison')
     return {'schema': 'zto-path-quoter-check-v1', 'block': observation['base']['block'],
-            'source': z.PUBLIC_RPC if endpoint.startswith('http://127.0.0.1:') else endpoint,
+            'source': endpoint,
             'quoter': QUOTER, 'all_match': all(r['matches'] for r in results), 'results': results}
 
 

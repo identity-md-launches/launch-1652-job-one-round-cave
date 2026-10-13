@@ -207,7 +207,9 @@ class PathTests(unittest.TestCase):
 
     def test_current_relay_and_read_only_allowlist(self):
         p.z.RPC('http://127.0.0.1:34689/rpc/1')
-        with self.assertRaises(ValueError): p.z.RPC('http://127.0.0.1:34793/rpc/1')
+        # Explicit loopback routes remain valid when the next machine changes port.
+        p.z.RPC('http://127.0.0.1:34793/rpc/1')
+        with self.assertRaises(ValueError): p.z.RPC('http://192.168.0.1:34793/rpc/1')
         with self.assertRaises(ValueError): p.z.RPC(p.z.PUBLIC_RPC).call('eth_sendTransaction',[])
         with self.assertRaises(ValueError): p.z.RPC('https://user:pass@example.com')
 

@@ -4,6 +4,7 @@
 import argparse
 import datetime
 import json
+import ipaddress
 from pathlib import Path
 import re
 import sys
@@ -67,16 +68,34 @@ class NoRedirect(urllib.request.HTTPRedirectHandler):
         raise ValueError('RPC redirects are not accepted')
 
 
+def validate_endpoint(endpoint):
+    """HTTPS, or an explicitly supplied literal loopback HTTP relay. No discovery."""
+    require(isinstance(endpoint, str) and endpoint and
+            not any(c.isspace() or ord(c) < 32 or ord(c) == 127 for c in endpoint),
+            'invalid RPC URL')
+    parsed = urllib.parse.urlsplit(endpoint)
+    require(parsed.username is None and parsed.password is None, 'credential URLs are not accepted')
+    require(bool(parsed.hostname) and not parsed.query and not parsed.fragment and
+            '?' not in endpoint and '#' not in endpoint and '\\' not in endpoint,
+            'invalid RPC URL')
+    port = parsed.port  # Also validates malformed/out-of-range ports.
+    require(port is None or 1 <= port <= 65535, 'invalid RPC port')
+    try:
+        loopback = ipaddress.ip_address(parsed.hostname).is_loopback
+    except ValueError:
+        loopback = False
+    require(parsed.scheme == 'https' or
+            (parsed.scheme == 'http' and loopback and port is not None),
+            'use HTTPS or an explicit literal loopback HTTP relay with a port')
+    return parsed
+
+
 class RPC:
     """Only public reads; no wallet, environment, proxy, signing or send methods."""
     METHODS = {'eth_chainId', 'eth_getBlockByNumber', 'eth_getLogs', 'eth_call'}
 
     def __init__(self, endpoint):
-        parsed = urllib.parse.urlsplit(endpoint)
-        require(parsed.username is None and parsed.password is None, 'credential URLs are not accepted')
-        require(parsed.scheme == 'https' or endpoint == 'http://127.0.0.1:34689/rpc/1',
-                'use HTTPS or the assignment Ethereum endpoint')
-        require(bool(parsed.hostname) and not parsed.query and not parsed.fragment, 'invalid RPC URL')
+        validate_endpoint(endpoint)
         self.endpoint = endpoint
         self.opener = urllib.request.build_opener(urllib.request.ProxyHandler({}), NoRedirect())
         self.counter = 0
@@ -118,7 +137,7 @@ def capture(endpoint, block_tag):
         return rpc.call('eth_call', [{'to': to, 'data': selector(signature) + arg}, pin])
 
     observation = {
-        'schema': SCHEMA, 'source': PUBLIC_RPC if endpoint.startswith('http://127.0.0.1:') else endpoint,
+        'schema': SCHEMA, 'source': endpoint,
         'chain_id': chain_id, 'block': block,
         'initialize': logs[0],
         'raw': {

@@ -1,0 +1,21 @@
+{
+  "ancestor_sha256": "015b98844caa0357c05cd8988e61a18cd671b9be825f7f7de9e201d320e5ae13",
+  "wall_sha256": "12c0b65b91781f55da4c19ebd5c7d16ab09e4d3597cbed8ee7a986068b7e6940",
+  "format": "PNG",
+  "width": 1254,
+  "height": 1254,
+  "mode": "RGB",
+  "addition_box_xyxy": [
+    510,
+    190,
+    810,
+    308
+  ],
+  "changed_pixels_inside_box": 34419,
+  "changed_pixels_outside_box": 0,
+  "unmet_visual_requirements": [],
+  "review_limitations": [
+    "Visual review is a contributor judgment, not independent certification.",
+    "Small open-rock patch includes generated texture; all exterior pixels are exact."
+  ]
+}

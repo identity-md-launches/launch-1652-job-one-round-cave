@@ -1,0 +1,33 @@
+{
+  "wall": {
+    "paths": [
+      "artifacts/line-1/wall-v6.png",
+      "artifacts/line-1/wall.png"
+    ],
+    "format": "PNG",
+    "width": 1254,
+    "height": 1254,
+    "bytes": 3976380,
+    "sha256": "12c0b65b91781f55da4c19ebd5c7d16ab09e4d3597cbed8ee7a986068b7e6940",
+    "untracked": true
+  },
+  "thumbnail": {
+    "path": "dist/line-1/26.jpg",
+    "format": "JPEG",
+    "width": 512,
+    "height": 512,
+    "bytes": 55193,
+    "untracked": true
+  },
+  "record": "dist/line-1/26.json",
+  "goal_byte_identical": true,
+  "older_dist_files_byte_identical": 30,
+  "record_count": 26,
+  "unmet_visual_requirements": [],
+  "changed_ancestor_pixels_outside_addition": 0,
+  "out_of_scope_changes": [],
+  "changed_files_under_100KB_outside_artifacts": true,
+  "test_count": 66,
+  "all_six_suites_passed": true,
+  "git_diff_check_passed": true
+}

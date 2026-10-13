@@ -22,8 +22,7 @@ def validate_snapshot(observation):
     state, bitmap, ticks = path.decode(observation)
     base = observation['base']
     block = base['block']
-    path.z.require(isinstance(base.get('source'), str) and base['source'].startswith('https://'),
-                   'snapshot source must be an HTTPS URL')
+    path.z.validate_endpoint(base.get('source'))
     path.z.require(isinstance(block.get('number'), str) and isinstance(block.get('hash'), str),
                    'snapshot must carry a block number and hash')
     return {'block': block, 'source': base['source'], 'tick': state['tick'],

@@ -1,0 +1,28 @@
+{
+  "attempts": [
+    {
+      "endpoint": "https://ethereum-rpc.publicnode.com",
+      "block": "finalized",
+      "status": "unavailable",
+      "rpc_error": {
+        "code": 4444,
+        "message": "pruned history unavailable"
+      }
+    },
+    {
+      "endpoint": "https://ethereum-rpc.publicnode.com",
+      "block": "26184260",
+      "status": "unavailable",
+      "rpc_error": {
+        "code": 4444,
+        "message": "pruned history unavailable"
+      }
+    },
+    {
+      "endpoint": "https://eth.drpc.org",
+      "block": "finalized",
+      "status": "collected_and_quoter_matched",
+      "evidence": "live-report.json"
+    }
+  ]
+}

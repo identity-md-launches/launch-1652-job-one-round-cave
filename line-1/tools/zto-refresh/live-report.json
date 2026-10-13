@@ -1,0 +1,72 @@
+{
+  "schema": "zto-refresh-report-v1",
+  "mode": "live_read_only",
+  "pool_id": "0x888b07bd282f587d3c6b0fcb23e7fc55bbb33abe8910dd7492db815dc8dc5592",
+  "block": {
+    "number": "0x18f927d",
+    "hash": "0x1346656496c6d10ba1577571efc9e86cc188d711bd987e60f5283e1dc37a73d2",
+    "timestamp": "0x6acea757"
+  },
+  "transport_endpoint": "https://eth.drpc.org",
+  "archival_source": null,
+  "comparison_count": 1,
+  "all_match": true,
+  "requested_quote_compared": true,
+  "quote": {
+    "schema": "zto-path-report-v1",
+    "status": "estimated",
+    "pool_id": "0x888b07bd282f587d3c6b0fcb23e7fc55bbb33abe8910dd7492db815dc8dc5592",
+    "chain_id": 1,
+    "block": {
+      "number": "0x18f927d",
+      "hash": "0x1346656496c6d10ba1577571efc9e86cc188d711bd987e60f5283e1dc37a73d2",
+      "timestamp": "0x6acea757"
+    },
+    "source": "https://eth.drpc.org",
+    "input_token": "ZTO",
+    "output_token": "IMD",
+    "requested_input_raw": "1000000000000000000",
+    "fee_pips": 12500,
+    "bitmap_words": [
+      5,
+      6,
+      7
+    ],
+    "initialized_ticks_crossed": 0,
+    "scope": "Exact-input core pool estimate within recorded tick coverage; not an executable quote.",
+    "limitations": [
+      "Historical RPC data, not a proof or freshness guarantee.",
+      "No router settlement, token transfer behavior, gas, slippage or MEV simulation.",
+      "Incomplete fills have partial diagnostics only, never a full-fill estimate."
+    ],
+    "estimate": {
+      "input_consumed_raw": "1000000000000000000",
+      "input_unspent_raw": "0",
+      "output_raw": "22505016102922",
+      "output": "0.000022505016102922",
+      "fee_raw": "12500000000000000",
+      "fee": "0.0125",
+      "sqrt_price_after_x96": "16596192844897947970781959410265",
+      "tick_after": 106897,
+      "liquidity_after_raw": "1395488085257384418720526"
+    },
+    "steps": [
+      {
+        "boundary_tick": 107460,
+        "initialized": false,
+        "crossed": false,
+        "liquidity_before_raw": "1395488085257384418720526",
+        "liquidity_after_raw": "1395488085257384418720526",
+        "input_consumed_raw": "1000000000000000000",
+        "output_raw": "22505016102922",
+        "fee_raw": "12500000000000000",
+        "sqrt_price_after_x96": "16596192844897947970781959410265"
+      }
+    ]
+  },
+  "read_request_count": null,
+  "limitations": [
+    "Transport labels do not establish an upstream provider or independent agreement.",
+    "Pool arithmetic does not simulate settlement, token behavior, gas or future inclusion."
+  ]
+}

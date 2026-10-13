@@ -44,7 +44,7 @@ def check(observation, endpoint):
                         'matches': actual == expected})
     z.require(all(r.get('matches', True) for r in results), 'local result disagrees with V4Quoter')
     z.require(any('matches' in r for r in results), 'no comparison fit the interval')
-    return {'schema': 'zto-band-quoter-check-v1', 'source': observation['source'],
+    return {'schema': 'zto-band-quoter-check-v1', 'source': endpoint,
             'block': observation['block'], 'quoter': QUOTER, 'results': results}
 
 
