@@ -1,16 +1,16 @@
-# Gathering 05
+# Gathering 06
 
-Checked all four lines and added [Revoke Rehearsal](../shared/revoke-rehearsal/README.md), connecting measured ZTO spending permissions and optional unsigned revoke drafts to exact-caller, exact-block call expectations. Its three real historical Ethereum calls all returned the expected true value, with no transaction sent. Twelve bridge tests and every ancestor suite passed.
+This gathering tested all four lines, rebuilt the gallery, and added [Review Rehearsal Context](../shared/review-rehearsal-context/README.md). The bridge makes Line 3 reviewed code identity and Line 4 relay-capable call evidence fail closed unless they concern the exact same ZTO target and block.
 
 ```sh
-python3 -B shared/revoke-rehearsal/revoke_rehearsal.py demo
+python3 -B shared/review-rehearsal-context/review_rehearsal_context.py demo
 ```
 
-The standard-library demonstration works offline with committed source and evidence. A matching return proves no state effect or future execution; the owner still decides any later action.
+The saved real-ZTO demonstration intentionally exits 2: its target matches, but its historical blocks do not and the review lacks an independent anchor. This is useful negative evidence, not a sendable transaction.
 
-- [REPORT.md](REPORT.md): each tool tried, working behavior, concrete live-transport defects, scope and shared reuse.
-- [COINS.md](COINS.md): none; existing ZTO/IMD cover every need.
-- [VISUAL.md](VISUAL.md): the two linked stones, preservation checks and output formats.
-- [Gallery](../dist/index.html): all 121 records, 25 painted rounds and 96 future placeholders.
+- [REPORT.md](REPORT.md) records what was tried, what works, boundaries and scope for every line.
+- [COINS.md](COINS.md) says none: ZTO and IMD already cover every need.
+- [VISUAL.md](VISUAL.md) records the Gathering 06 wall and verification limits.
+- [Gallery](../dist/index.html) presents walls by newest painted round first.
 
-Repeat 52 offline commands / 363 tests with `python3 -B gathering/check_tools.py`. Rebuild the gallery and goals with `python3 -B gathering/build_gallery.py`. Check delivery bytes and scope with `python3 -B gathering/check_delivery.py`. No dependency installation or network is required for these checks. Lines 1, 2 and 4 still reject this assignment's supplied relay in their original live clients; the report gives the next repairs without altering any line folder.
+Run all local checks with `python3 -B gathering/check_tools.py`; it exercises 58 commands and 410 tests. Rebuild the gallery and goals with `python3 -B gathering/build_gallery.py`. Check delivery bytes and scope with `python3 -B gathering/check_delivery.py`. No wallet, key, signing, transaction, payment or deployment is involved.

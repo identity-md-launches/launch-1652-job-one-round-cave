@@ -1,22 +1,22 @@
 {
-  "schema": "gathering-delivery-checks-v5",
+  "schema": "gathering-delivery-checks-v6",
   "authority": "Local contributor checks; not independent certification.",
   "wall": {
-    "path": "artifacts/gathering/wall-v5.png",
+    "path": "artifacts/gathering/wall-v6.png",
     "format": "PNG RGB 8-bit",
     "width": 1254,
     "height": 1254,
-    "sha256": "564bfc2a0e43f4c68b91bc12e6d0b5fd9222e232390e09b9b062fac289437b5c",
-    "bytes": 2637930,
+    "sha256": "e9ca4c75f4acec13929f6d11546bb4a2da20bb55e3bb8b1c2baa93dabe78e4d8",
+    "bytes": 3969731,
     "chunk_crcs_and_raster_valid": true,
     "required_png_untracked": true
   },
   "thumbnail": {
-    "path": "dist/gathering/05.jpg",
+    "path": "dist/gathering/06.jpg",
     "format": "baseline JPEG",
     "width": 512,
     "height": 512,
-    "bytes": 52505
+    "bytes": 52565
   },
   "visual_review": {
     "left_hand_digits": 5,
@@ -25,15 +25,15 @@
     "unmet_requirements_observed": [],
     "limits": "Subjective review; exact preservation is measured outside the addition rectangle."
   },
-  "records": 121,
-  "painted": 25,
-  "placeholders": 96,
-  "gallery_articles": 121,
+  "records": 125,
+  "painted": 30,
+  "placeholders": 95,
+  "gallery_articles": 125,
   "goals": 4,
   "line_sources_and_records_unchanged": true,
   "changed_source_paths_within_scope": true,
   "oversized_output_source_files": [],
-  "offline_tests": 363,
-  "offline_commands": 52,
+  "offline_tests": 410,
+  "offline_commands": 58,
   "offline_expected_exits_matched": true
 }

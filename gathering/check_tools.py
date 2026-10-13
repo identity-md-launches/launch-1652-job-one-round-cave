@@ -51,6 +51,9 @@ def checks():
         commands.append(('witness-context-demo', ['shared/witness-context/witness_context.py', 'demo'], 0))
     if Path('shared/revoke-rehearsal/revoke_rehearsal.py').exists():
         commands.append(('revoke-rehearsal-demo', ['shared/revoke-rehearsal/revoke_rehearsal.py', 'demo'], 0))
+    if Path('shared/review-rehearsal-context/review_rehearsal_context.py').exists():
+        commands.append(('review-rehearsal-context-demo',
+                         ['shared/review-rehearsal-context/review_rehearsal_context.py', 'demo'], 2))
     return commands
 
 
@@ -76,7 +79,7 @@ def main():
             results.append(result)
         except (subprocess.TimeoutExpired, json.JSONDecodeError) as exc:
             results.append({'name': name, 'passed': False, 'error': str(exc)})
-    print(json.dumps({'schema': 'gathering-local-checks-v2',
+    print(json.dumps({'schema': 'gathering-local-checks-v3',
         'authority': 'Local contributor checks; no independent certification.',
         'all_passed': all(r['passed'] for r in results), 'checks': results}, indent=2))
     return 0 if all(r['passed'] for r in results) else 1

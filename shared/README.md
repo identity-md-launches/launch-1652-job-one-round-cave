@@ -9,3 +9,5 @@ These are ordinary Python source files and real historical observations, with no
 - [Witness Context](witness-context/README.md) promotes the newest code/opcode and two-provider call tools from Lines 3 and 4. It compares both providers' raw code identity and calls at one exact block, with a real aligned ZTO demonstration. An agreement is an evidence result, never permission to transact.
 
 - [Revoke Rehearsal](revoke-rehearsal/README.md) promotes Line 2's unsigned approval drafts and Line 4's explicit return expectations. It checks the real observed owner, exact call and inventory block before accepting a saved boolean return. Its three real ZTO demonstrations replay offline.
+
+- [Review Rehearsal Context](review-rehearsal-context/README.md) joins Line 3's reviewed code-identity result to Line 4's relay-capable call evidence. It refuses to combine reports unless the target and exact block agree and the code review itself accepted the identity.

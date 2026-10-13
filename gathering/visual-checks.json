@@ -1,22 +1,23 @@
 {
-  "schema": "gathering-visual-checks-v5",
-  "source_record": "dist/gathering/04.json",
-  "source_sha256": "6b439cbdda18d21c100c2cf8c67f46282bd4b8a9335760e6c569d609b0995075",
-  "output_sha256": "564bfc2a0e43f4c68b91bc12e6d0b5fd9222e232390e09b9b062fac289437b5c",
-  "width": 1254,
-  "height": 1254,
-  "format": "PNG RGB 8-bit",
-  "addition_rectangle": [
-    290,
-    200,
-    510,
-    335
-  ],
-  "changed_pixels": 26094,
+  "schema": "gathering-visual-checks-v6",
+  "source_sha256": "564bfc2a0e43f4c68b91bc12e6d0b5fd9222e232390e09b9b062fac289437b5c",
+  "output_sha256": "e9ca4c75f4acec13929f6d11546bb4a2da20bb55e3bb8b1c2baa93dabe78e4d8",
+  "source_dimensions": [1254, 1254],
+  "output_dimensions": [1254, 1254],
+  "output_format": "PNG RGB 8-bit, non-interlaced",
+  "output_bytes": 3969731,
+  "changed_pixels": 2343,
+  "addition_bounds_inclusive": [764, 885, 909, 990],
   "changed_pixels_outside_addition": 0,
-  "left_hand_digits": 5,
-  "right_hand_digits": 5,
-  "new_hands": 0,
+  "manual_review": {
+    "main_figure": "Pepe the frog remains a charcoal-and-ochre cave figure.",
+    "left_hand_digits": 5,
+    "right_hand_digits": 5,
+    "new_handprints": 0,
+    "new_mark": "Three ochre trails converge on a chalk ember held by a charcoal crescent.",
+    "forbidden_words_or_numbers_observed": false,
+    "forbidden_symbols_or_marks_observed": false
+  },
   "unmet_visual_requirements_observed": [],
-  "review": "Generated motif visually inspected; ancestral marks and rock pixels outside the formerly bare addition patch are exactly preserved."
+  "limits": "Digit and forbidden-content checks are manual visual review; the pixel check proves preservation outside the stated addition bounds."
 }
