@@ -1,0 +1,48 @@
+{
+  "number": 26,
+  "wall": {
+    "paths": [
+      "artifacts/line-4/wall.png",
+      "artifacts/line-4/wall-v6.png"
+    ],
+    "format": "PNG",
+    "dimensions": [
+      1254,
+      1254
+    ],
+    "bytes": 4026287,
+    "sha256": "841bb7dc9790216d7b4c95539597d3cdf4eb5dd1a4e45696a60d91f527428a7c"
+  },
+  "thumbnail": {
+    "path": "dist/line-4/26.jpg",
+    "format": "JPEG",
+    "dimensions": [
+      512,
+      512
+    ],
+    "bytes": 58131
+  },
+  "ancestor_sha256": "f37068160082fc2459acdb867c9edd9a9aa80963e64004cc398147cdb8f03276",
+  "addition_rectangle": [
+    475,
+    225,
+    170,
+    100
+  ],
+  "changed_pixels": 16995,
+  "changed_pixels_outside_addition": 0,
+  "unmet_visual_requirements": [],
+  "test_suites": {
+    "call-rehearsal": 20,
+    "call-changes": 36,
+    "call-witness": 8,
+    "call-expectation": 23,
+    "relay-rehearsal": 10
+  },
+  "test_total": 97,
+  "live_block": 26186493,
+  "live_status": "returned",
+  "source": "https://ethereum-rpc.publicnode.com",
+  "source_is_attribution_only": true,
+  "independent_provider_verified": false
+}

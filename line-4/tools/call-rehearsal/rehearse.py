@@ -90,16 +90,22 @@ class RPCError(Exception):
 class RPC:
     METHODS = {'eth_chainId', 'eth_getBlockByNumber', 'eth_getCode', 'eth_call'}
 
-    def __init__(self, endpoint):
+    def __init__(self, endpoint, relay=None):
         require(endpoint in ENDPOINTS, 'unsupported public RPC')
+        if relay is not None:
+            match = re.fullmatch(r'http://127\.0\.0\.1:([1-9][0-9]{0,4})/rpc/1', relay)
+            require(match is not None and int(match[1]) <= 65535,
+                    'relay must be http://127.0.0.1:<port>/rpc/1')
         self.endpoint = endpoint
+        self.transport = relay if relay is not None else endpoint
+        self.via_relay = relay is not None
         self.counter = 0
         self.opener = urllib.request.build_opener(urllib.request.ProxyHandler({}), NoRedirect())
 
     def call(self, method, params):
         require(method in self.METHODS, 'RPC method is not read-only allowlisted')
         self.counter += 1
-        request = urllib.request.Request(self.endpoint, data=json.dumps({
+        request = urllib.request.Request(self.transport, data=json.dumps({
             'jsonrpc': '2.0', 'id': self.counter, 'method': method, 'params': params}).encode(),
             headers={'Content-Type': 'application/json', 'User-Agent': 'Pepeolithic-CallRehearsal/1.0'})
         with self.opener.open(request, timeout=25) as response:
@@ -172,6 +178,10 @@ def capture(rpc, tx, returns):
     require(after == block, 'block changed during rehearsal; discard and retry')
     observation = {'schema': SCHEMA, 'source': rpc.endpoint, 'chain_id': 1, 'block': block,
                    'call': tx, 'returns': returns, 'code_present': True, 'outcome': outcome}
+    if getattr(rpc, 'via_relay', False):
+        observation['transport'] = {'kind': 'contributor-relay',
+                                    'source_is_attribution_only': True,
+                                    'independent_provider_verified': False}
     report(observation)
     return observation
 
@@ -184,10 +194,22 @@ def report(observation):
     require(observation['code_present'] is True, 'target code was not confirmed')
     tx, block = transaction(observation['call']), header(observation['block'])
     result = interpret(observation['outcome'], observation['returns'])
-    return {'chain_id': 1, 'block_number': quantity(block['number']), 'block_hash': block['hash'],
+    result_report = {'chain_id': 1, 'block_number': quantity(block['number']), 'block_hash': block['hash'],
             'call': tx, 'result': result,
             'limits': 'Provider-reported simulation at a finalized historical state; no transaction sent. '
                       'No gas estimate, receipt, state diff, authenticity proof or guarantee of future execution.'}
+    if 'transport' in observation:
+        require(observation['transport'] == {
+            'kind': 'contributor-relay', 'source_is_attribution_only': True,
+            'independent_provider_verified': False}, 'invalid relay provenance')
+        # Equality alone accepts integers as booleans in Python.
+        require(type(observation['transport']['source_is_attribution_only']) is bool
+                and type(observation['transport']['independent_provider_verified']) is bool,
+                'invalid relay provenance flags')
+        result_report['transport'] = observation['transport']
+        result_report['limits'] += (' Contributor relay used; source is public attribution only. '
+                                    'Upstream provider identity and independence are not verified.')
+    return result_report
 
 
 def workspace_path(value):
@@ -202,6 +224,7 @@ def main(argv=None):
     for name in ('demo', 'call', 'transfer'):
         cmd = sub.add_parser(name)
         cmd.add_argument('--rpc', choices=ENDPOINTS, default=ENDPOINTS[0])
+        cmd.add_argument('--relay', help='explicit contributor loopback transport: http://127.0.0.1:<port>/rpc/1; --rpc supplies public attribution')
         cmd.add_argument('--save', help='write a bounded observation inside the workspace')
         if name in ('demo', 'transfer'):
             cmd.add_argument('--token', choices=TOKENS, default='ZTO')
@@ -238,7 +261,7 @@ def main(argv=None):
             # Validate before any network request.
             tx = transaction(tx)
             destination = workspace_path(args.save) if args.save else None
-            observation = capture(RPC(args.rpc), tx, returns)
+            observation = capture(RPC(args.rpc, relay=args.relay), tx, returns)
             if destination:
                 encoded = json.dumps(observation, indent=2) + '\n'
                 require(len(encoded.encode()) <= LIMIT, 'observation exceeds byte limit')

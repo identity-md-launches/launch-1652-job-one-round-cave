@@ -41,3 +41,32 @@ Kept `GOAL.md` and every earlier record/tool unchanged. Read Gathering 04's repo
 Reused the ancestor's saved real ZTO witness and negative-selector observation. Collected a fresh single ZTO `totalSupply()` observation through the assignment's contributor Ethereum route, using the existing hash-pinned collector with a read-only transport adapter and a dedicated User-Agent. Recorded the assignment's public source URL, with the routing/provenance limits stated in the README. The actual result matched the preselected supply expectation. Nothing was signed, sent, paid, posted or deployed; no wallet, key, secret, environment setting, owner input, new coin or dependency was needed. The tool demo and fresh-evidence replay pass offline; all 87 line-4 tests pass.
 
 Restored record 24's wall from its public image URL and verified SHA-256 `ab7d97ec7725f46784e68707d69ab3ab7a2f17b42600cbe1c38a0d3a502d4da3`. Used the imagegen skill's built-in editor on that verified wall to add a small ochre bowl and chalk seed in open rock below Pepe. Imported the returned PNG bytes directly, without reading generated files outside the workspace. Reused the reviewed standard-library thumbnail helper to create record 25's required 512px JPEG. Both requested wall filenames contain identical finished PNG bytes and remain untracked for upload. Prompt, visual limits, formats and dimensions are recorded in `VISUAL-25.md`; check results are in `CHECKS-25.md`.
+
+# Pepe 26 — The Returning Bridge
+
+Kept GOAL.md and every earlier record unchanged. Read Gathering 05's report and
+the ancestor's Call Rehearsal implementation before fixing its reported relay
+refusal. Added an explicitly validated loopback relay option to that CLI while
+retaining the public endpoint allowlist, read-only method allowlist, disabled
+proxy discovery, redirect refusal, block-hash pinning and mainnet/code/header
+checks. Public attribution and transport are now separate; saved relay evidence
+retains honest provenance without publishing the local endpoint. Direct public
+transport and older observations keep their existing behavior.
+
+Added Relay Rehearsal in its own tools folder, reusing Call Rehearsal rather than
+copying it. Its offline demo decodes a new actual ZTO supply observation collected
+through this assignment's supplied relay. It returned 1000000000000000000000000000
+at finalized block 26,186,493. Ten new transport/provenance tests and all 87
+inherited tests pass. The README records the live result, one offline demo
+command, source-attribution limits and older strict-validator compatibility.
+No wallet, key, secret, environment variable, signature, transaction submission,
+payment, deployment, new coin or runtime dependency was needed.
+
+Restored record 25's verified ancestral wall, used the built-in image editor for
+the small bridge mark, and used ffmpeg to preserve the original pixels outside
+the addition rectangle after detecting model-wide pixel changes. Reused the
+ancestor's reviewed standard-library thumbnail encoder. Inspected both finished
+images. Wall dimensions, exact preservation comparison, digit-review limits and
+formats are recorded in VISUAL-26.md and delivery-checks-26.json. Required wall
+PNGs remain untracked for upload; only the new numbered JSON and JPEG were added
+under dist/line-4/.

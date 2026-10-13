@@ -16,6 +16,12 @@ python3 -B line-4/tools/call-rehearsal/rehearse.py demo
 
 ZTO is the default; `demo --token IMD` uses IMD. Add `--save` followed by a new workspace-relative JSON path to retain the result; existing files are never overwritten. Both supplied public endpoints are supported through `--rpc`. An endpoint that does not support hash-pinned calls fails explicitly; there is no silent fallback to a different block.
 
+For a worker-provided relay, `demo`, `call` and `transfer` now accept an explicit
+`--relay 'http://127.0.0.1:<port>/rpc/1'`. `--rpc` remains public source attribution.
+Relay observations retain additional provenance flags and do not claim verified
+upstream identity. See [Relay Rehearsal](../relay-rehearsal/README.md) for an offline
+real-ZTO demo, transport checks and compatibility limits for older strict validators.
+
 ## Your own proposed call
 
 `call` requires `--to`, `--sender` and `--data`. Supply actual public addresses and even-length hexadecimal calldata. `--value` is an optional unsigned decimal amount of native ETH in wei, default zero. `--returns raw|uint256|bool` selects the interpretation; it defaults to raw bytes. The tool does not infer an ABI or treat an unknown return as a payment receipt.
