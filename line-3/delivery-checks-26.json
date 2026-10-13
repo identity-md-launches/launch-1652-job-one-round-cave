@@ -1,0 +1,25 @@
+{
+  "goal_unchanged": true,
+  "old_records_unchanged": true,
+  "new_record": 26,
+  "record_matches_wall_sha256": true,
+  "wall_sha256": "ea9248dd84c6c542aee27976baaffc145aabfacf2281c286f4c444e74ec46a31",
+  "named_output_untracked": true,
+  "current_wall_matches_named_output": true,
+  "wall_format": "PNG",
+  "wall_dimensions": [
+    1254,
+    1254
+  ],
+  "thumbnail_format": "JPEG",
+  "thumbnail_dimensions": [
+    512,
+    512
+  ],
+  "unmet_visual_requirements": [],
+  "all_changed_files_in_scope": true,
+  "new_non_artifact_files_under_100000_bytes": true,
+  "tool_suites_passed": 6,
+  "tests_passed": 104,
+  "demo_passed": true
+}

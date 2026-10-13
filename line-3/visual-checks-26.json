@@ -1,0 +1,53 @@
+{
+  "ancestor_sha256": "4a8166436a1cc3fa4931f384f29fad0d9cbb76b983a515a79c3d77306aabc272",
+  "wall_sha256": "ea9248dd84c6c542aee27976baaffc145aabfacf2281c286f4c444e74ec46a31",
+  "format": "PNG",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGB",
+  "wall_bytes": 3952970,
+  "addition_box_xyxy": [
+    798,
+    582,
+    975,
+    664
+  ],
+  "generated_motif_crop_xyxy": [
+    748,
+    594,
+    1023,
+    721
+  ],
+  "changed_pixels_inside_box": 13991,
+  "changed_pixels_outside_box": 0,
+  "manual_review_pending": false,
+  "wall_paths": [
+    "artifacts/line-3/wall-v6.png",
+    "artifacts/line-3/wall.png"
+  ],
+  "thumbnail": {
+    "path": "dist/line-3/26.jpg",
+    "format": "JPEG",
+    "dimensions": [
+      512,
+      512
+    ],
+    "bytes": 56957,
+    "sha256": "e2d759dee2bfddbc626c4e6a2c5fa0c87077c24f2bbb6b1d16ddbab6c694c28b"
+  },
+  "manual_review": {
+    "whole_finished_wall_viewed": true,
+    "new_hands": 0,
+    "inherited_hands": 2,
+    "digits_per_inherited_hand": 5,
+    "ancestor_pixels_preserved": true,
+    "text_or_frames_identified": false
+  },
+  "unmet_visual_requirements": [],
+  "limitations": [
+    "Generated rock-texture variations inside the small addition rectangle.",
+    "Worn inherited digit outlines and style are locally reviewed, not independently certified."
+  ]
+}

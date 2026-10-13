@@ -1,0 +1,122 @@
+{
+  "demonstration_passed": true,
+  "example_reviews_are_not_safety_endorsements": true,
+  "reference_heights_are_historical_examples": true,
+  "checks": [
+    {
+      "case": "ZTO historical identity; no independent anchor",
+      "result": {
+        "schema": "code-review-result-v1",
+        "chain_id": 1,
+        "decision": "refuse",
+        "reasons": [
+          "missing-caller-anchor"
+        ],
+        "identity_matches": true,
+        "review_digest": "0xafffea7eb9b295d962e0a1031b72fb272a322ebd26c5cdf769dc21e0f061cda6",
+        "target": "0xd782bdea4ef02a0bd391eb9089470c8080f0a68e",
+        "code_block": {
+          "number": "0x18f8e40",
+          "hash": "0x57f561e7217307ab29f9fc3563627b97b97242261522b70429f2a873cf2593fd"
+        },
+        "checkpoint": {
+          "number": "0x18f8e40",
+          "hash": "0x57f561e7217307ab29f9fc3563627b97b97242261522b70429f2a873cf2593fd"
+        },
+        "as_of_block": 26185288,
+        "code_age_blocks": 8,
+        "max_age_blocks": 8,
+        "age_reference": "caller-supplied-height; not current-time verification",
+        "differences": [],
+        "state_inclusion_verified": true,
+        "anchor_hash_matched": false,
+        "anchor_authenticity_verified": false,
+        "consensus_verified": false,
+        "parent_links_verified": 0,
+        "proof_provenance": {
+          "transport_source": "worker-provided-relay",
+          "source": "https://ethereum-rpc.publicnode.com",
+          "source_kind": "attribution-only"
+        },
+        "scope": "Exact reviewed runtime/path/slot identity at code_block only. The caller must independently trust the anchor and review. A match does not establish semantic safety, routing behavior, unchanged code between blocks, code at checkpoint/today, finality, or permission to transact."
+      }
+    },
+    {
+      "case": "IMD historical identity; no independent anchor",
+      "result": {
+        "schema": "code-review-result-v1",
+        "chain_id": 1,
+        "decision": "refuse",
+        "reasons": [
+          "missing-caller-anchor"
+        ],
+        "identity_matches": true,
+        "review_digest": "0xfb5c3ecb1333fcea051820254cf4c0f89f507d6943e9672c736c0cb42a6a8baf",
+        "target": "0xd34a99bc0f67ae1bbd63c660e6d0b0dd03e263b7",
+        "code_block": {
+          "number": "0x18f8e40",
+          "hash": "0x57f561e7217307ab29f9fc3563627b97b97242261522b70429f2a873cf2593fd"
+        },
+        "checkpoint": {
+          "number": "0x18f8e40",
+          "hash": "0x57f561e7217307ab29f9fc3563627b97b97242261522b70429f2a873cf2593fd"
+        },
+        "as_of_block": 26185288,
+        "code_age_blocks": 8,
+        "max_age_blocks": 8,
+        "age_reference": "caller-supplied-height; not current-time verification",
+        "differences": [],
+        "state_inclusion_verified": true,
+        "anchor_hash_matched": false,
+        "anchor_authenticity_verified": false,
+        "consensus_verified": false,
+        "parent_links_verified": 0,
+        "proof_provenance": {
+          "transport_source": "worker-provided-relay",
+          "source": "https://ethereum-rpc.publicnode.com",
+          "source_kind": "attribution-only"
+        },
+        "scope": "Exact reviewed runtime/path/slot identity at code_block only. The caller must independently trust the anchor and review. A match does not establish semantic safety, routing behavior, unchanged code between blocks, code at checkpoint/today, finality, or permission to transact."
+      }
+    },
+    {
+      "case": "IMD one block beyond example age limit",
+      "result": {
+        "schema": "code-review-result-v1",
+        "chain_id": 1,
+        "decision": "refuse",
+        "reasons": [
+          "code-evidence-too-old",
+          "missing-caller-anchor"
+        ],
+        "identity_matches": true,
+        "review_digest": "0xfb5c3ecb1333fcea051820254cf4c0f89f507d6943e9672c736c0cb42a6a8baf",
+        "target": "0xd34a99bc0f67ae1bbd63c660e6d0b0dd03e263b7",
+        "code_block": {
+          "number": "0x18f8e40",
+          "hash": "0x57f561e7217307ab29f9fc3563627b97b97242261522b70429f2a873cf2593fd"
+        },
+        "checkpoint": {
+          "number": "0x18f8e40",
+          "hash": "0x57f561e7217307ab29f9fc3563627b97b97242261522b70429f2a873cf2593fd"
+        },
+        "as_of_block": 26185289,
+        "code_age_blocks": 9,
+        "max_age_blocks": 8,
+        "age_reference": "caller-supplied-height; not current-time verification",
+        "differences": [],
+        "state_inclusion_verified": true,
+        "anchor_hash_matched": false,
+        "anchor_authenticity_verified": false,
+        "consensus_verified": false,
+        "parent_links_verified": 0,
+        "proof_provenance": {
+          "transport_source": "worker-provided-relay",
+          "source": "https://ethereum-rpc.publicnode.com",
+          "source_kind": "attribution-only"
+        },
+        "scope": "Exact reviewed runtime/path/slot identity at code_block only. The caller must independently trust the anchor and review. A match does not establish semantic safety, routing behavior, unchanged code between blocks, code at checkpoint/today, finality, or permission to transact."
+      }
+    }
+  ]
+}

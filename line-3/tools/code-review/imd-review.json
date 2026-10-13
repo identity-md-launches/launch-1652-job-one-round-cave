@@ -1,0 +1,18 @@
+{
+  "schema": "code-review-v1",
+  "chain_id": 1,
+  "target": "0xd34a99bc0f67ae1bbd63c660e6d0b0dd03e263b7",
+  "path": [
+    {
+      "address": "0xd34a99bc0f67ae1bbd63c660e6d0b0dd03e263b7",
+      "code_hash": "0x79a1ae149d27d4aae006d4dd75cb834222c9623799bbf34359428aaf66fec3bf",
+      "kind": "no-supported-proxy-signal",
+      "next_address": null,
+      "storage": {
+        "implementation": "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "beacon": "0x0000000000000000000000000000000000000000000000000000000000000000"
+      }
+    }
+  ],
+  "max_age_blocks": 8
+}
